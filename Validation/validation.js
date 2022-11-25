@@ -14,6 +14,13 @@ const isValidFCName = function (name){
     return nameRegex.test(name);
 };
 
+/*---------------------------------logo link validation -----------------------------------------------------*/
+const isValidCollegeLogoLink = function(logo){
+    const logoRegex = /^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/
+     return logoRegex.test(logo)
+
+}
+
 /*-----------------------------------STUDENT NAME VALIDATION-----------------------------------------------*/
 
 const isValidStudentName = function (name){
@@ -40,13 +47,16 @@ const isValidStudentMobile = function(email) {
 
 /*---------------------------------------------VALUE VALIDATION-------------------------------------------*/
  
-const isEmpty = function (value){
-    if (typeof value === "undefined"|| value === null) return false;
-    if (typeof value ==="string"&& value.trim().length === 0) return false;
-    return true;
-};
+// const isEmpty = function (value){
+//     if (typeof value === "undefined"|| value === null) return false;
+//     if (typeof value ==="string"&& value.trim().length === 0) return false;
+//     return true;
+// };
+const isEmpty = function(value){
+    if(typeof value === "String" && value.trim().length===0) return false
+    return true
+}
 
 
 
-
-module.exports = {isValidCollegeName, isValidFCName, isEmpty, isValidStudentName, isValidEmail, isValidStudentMobile}
+module.exports = {isValidCollegeName,isValidCollegeLogoLink, isValidFCName, isEmpty, isValidStudentName, isValidEmail, isValidStudentMobile}
