@@ -1,21 +1,13 @@
 // Entry file--------------------------------
 const express = require('express');
-
 const mongoose = require('mongoose');
-
 const route = require('./routes/route')
-
 const app = express();
-
-const jwt = require('jsonwebtoken')
-
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/' , route);
 
-mongoose.connect("mongodb+srv://AyushPanday:AyushPan123@cluster0.eixapeq.mongodb.net/?retryWrites=true&w=majority" ,{
+mongoose.connect("mongodb+srv://vikasgautam:8279787711@cluster0.anirnnm.mongodb.net/project1" ,{
     useNewUrlparser :true
 })
 .then(()=>console.log("Mongodb is Connected"))
